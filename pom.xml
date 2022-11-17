@@ -51,7 +51,7 @@
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
-			<version>5.8.1</version>
+			<version>5.7.0</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -75,7 +75,21 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>${springfox-version}</version>
-        </dependency> 
+        </dependency>
+		<!-- https://mvnrepository.com/artifact/net.bytebuddy/byte-buddy -->
+		<dependency>
+		    <groupId>net.bytebuddy</groupId>
+		    <artifactId>byte-buddy</artifactId>
+		    <version>1.12.10</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/net.bytebuddy/byte-buddy-agent -->
+		<dependency>
+		    <groupId>net.bytebuddy</groupId>
+		    <artifactId>byte-buddy-agent</artifactId>
+		    <version>1.12.10</version>
+		    <scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -106,6 +120,12 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>**/RegistrationControllerTestIT.java</exclude>
+						<exclude>**/PersonRepositoryTestIT.java</exclude>
+					</excludes>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
