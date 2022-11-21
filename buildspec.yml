@@ -14,7 +14,8 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+      - unzip registration-0.0.1-SNAPSHOT.zip
 artifacts:
   files:
-    - target/registration-0.0.1-SNAPSHOT.jar
+    - registration-0.0.1-SNAPSHOT.jar
     - Dockerfile
