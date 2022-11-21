@@ -14,18 +14,18 @@
 
 **To run the build of the application you can use**
 
-    ./mvnw clean install
+    ./mvnw clean package
 
 **Or if you don't want to run the unit tests just make the build directly using**
 
-    ./mvnw clean install -DskipTests
+    ./mvnw clean package -DskipTests
 
 
 ## Instructions to run this API
 
 **Before you run this application make sure to take a look at the application.properties, if you want to use a external mongodb url you may need to declare a env variable MONGO_DB_URI:**
 
-    export MONGODB=mongodb://root:root@localhost:27017
+    export MONGO_DB_URI=mongodb://root:root@localhost:27017
 
 **To execute this application you can do this directly on the command line with the following command:**
 
